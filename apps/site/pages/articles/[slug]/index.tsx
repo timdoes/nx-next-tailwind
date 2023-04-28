@@ -6,12 +6,18 @@ import {
   getParsedFileContentBySlug,
   renderMarkdown,
 } from '@nx-next-tailwind/markdown';
+import { Youtube } from '@nx-next-tailwind/shared/mdx-elements';
 import { MDXRemote } from 'next-mdx-remote';
 
-/* eslint-disable-next-line */
 export interface ArticleProps extends ParsedUrlQuery {
   slug?: string;
 }
+
+const mdxElements = {
+  Youtube
+};
+
+const POSTS_PATH = join(process.cwd(), '_articles');
 
 export function Article({frontMatter, html}) {
   return (
@@ -21,12 +27,10 @@ export function Article({frontMatter, html}) {
         <div>by { frontMatter.author.name }</div>
       </article>
       <hr />
-      <MDXRemote {...html} />
+      <MDXRemote {...html} components={mdxElements} />
     </div>
   );
 }
-
-const POSTS_PATH = join(process.cwd(), '_articles');
 
 export const getStaticProps: GetStaticProps<ArticleProps> = async ({params}: {params: ArticleProps}) => {
   const articleMarkdownContent = getParsedFileContentBySlug(params.slug, POSTS_PATH);
