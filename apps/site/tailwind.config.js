@@ -13,7 +13,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
+  presets: [require('../../tailwind-workspace-preset.js')]
 };
