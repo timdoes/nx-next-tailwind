@@ -21,7 +21,8 @@
       ],
       "@nx-next-tailwind/shared/mdx-elements/*": [
         "libs/shared/mdx-elements/src/lib/*"
-      ]
+      ],
+      "@nx-next-tailwind/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
