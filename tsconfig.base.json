@@ -21,6 +21,9 @@
       ],
       "@nx-next-tailwind/shared/mdx-elements/*": [
         "libs/shared/mdx-elements/src/lib/*"
+      ],
+      "@nx-next-tailwind/workspace-plugin": [
+        "tools/workspace-plugin/src/index.ts"
       ]
     }
   },
