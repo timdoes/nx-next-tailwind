@@ -10,19 +10,23 @@
       "$default": {
         "$source": "argv",
         "index": 0
-      }
+      },
+      "x-prompt": "What's the title of the article?"
     },
     "author": {
       "type": "string",
-      "description": "The author of the article"
+      "description": "The author of the article",
+      "x-prompt": "What's the name of the author?"
     },
     "excerpt": {
       "type": "string",
-      "description": "An excerpt that summarizes the blog post in a single line"
+      "description": "An excerpt that summarizes the blog post in a single line",
+      "x-prompt": "What's the excerpt of the article?"
     },
     "youtubeUid": {
       "type": "string",
-      "description": "The uid of the YouTube video"
+      "description": "The uid of the YouTube video",
+      "x-prompt": "What's the uid of the aritcle YouTube video?"
     }
   },
   "required": ["title", "author", "excerpt", "youtubeUid"]
