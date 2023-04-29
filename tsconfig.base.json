@@ -18,6 +18,9 @@
       "@nx-next-tailwind/markdown": ["libs/markdown/src/index.ts"],
       "@nx-next-tailwind/shared/mdx-elements": [
         "libs/shared/mdx-elements/src/index.ts"
+      ],
+      "@nx-next-tailwind/shared/mdx-elements/*": [
+        "libs/shared/mdx-elements/src/lib/*"
       ]
     }
   },

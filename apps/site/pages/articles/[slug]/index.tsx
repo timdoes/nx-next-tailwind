@@ -15,8 +15,7 @@ export interface ArticleProps extends ParsedUrlQuery {
 
 const mdxElements = {
   Youtube: dynamic(async () => {
-    const components = await import('@nx-next-tailwind/shared/mdx-elements');
-    return components.Youtube;
+    return await import('@nx-next-tailwind/shared/mdx-elements/youtube/youtube');
   }),
 };
 
