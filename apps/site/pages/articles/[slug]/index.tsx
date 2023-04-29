@@ -6,15 +6,18 @@ import {
   getParsedFileContentBySlug,
   renderMarkdown,
 } from '@nx-next-tailwind/markdown';
-import { Youtube } from '@nx-next-tailwind/shared/mdx-elements';
 import { MDXRemote } from 'next-mdx-remote';
+import dynamic from "next/dynamic";
 
 export interface ArticleProps extends ParsedUrlQuery {
   slug?: string;
 }
 
 const mdxElements = {
-  Youtube
+  Youtube: dynamic(async () => {
+    const components = await import('@nx-next-tailwind/shared/mdx-elements');
+    return components.Youtube;
+  }),
 };
 
 const POSTS_PATH = join(process.cwd(), '_articles');
