@@ -19,7 +19,7 @@ const mdxElements = {
   }),
 };
 
-const POSTS_PATH = join(process.cwd(), '_articles');
+const POSTS_PATH = join(process.cwd(), process.env.ARTICLES_PATH);
 
 export function Article({frontMatter, html}) {
   return (
