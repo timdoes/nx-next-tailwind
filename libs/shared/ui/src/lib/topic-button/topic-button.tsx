@@ -31,13 +31,13 @@ export interface TopicButtonProps {
 export function TopicButton(props: TopicButtonProps) {
 
   return (
-    <Link href={props.href}>
+    <Link href={props.href} data-testid='topicLink'>
       <div
       className='bg-white pl-4 rounded-lg shadow flex max-w-md min-w-max hover:shadow-md transition-shadow cursor-pointer'
     >
-        <div className="p-5 flex items-center">
+        <div className="p-5 flex items-center" data-testid='topicInnerWrap'>
           <TopicIcon icon={props.icon} className='text-4xl mr-2' />
-          <h2 className='font-bold text-4xl'>{props.topicName}</h2>
+          <h2 className='font-bold text-4xl' data-testid='topicName'>{props.topicName}</h2>
         </div>
       </div>
     </Link>
