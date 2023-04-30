@@ -1,6 +1,6 @@
 const ARGS = {
   topicName: 'GitHub',
-  icon: 'FaGithubs',
+  icon: 'FaGithub',
   href: 'https://github.com/timdoes',
 };
 
