@@ -1,5 +1,5 @@
 import { readdirSync } from "fs";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticPaths, InferGetStaticPropsType } from "next";
 import { join } from "path";
 import { ParsedUrlQuery } from "querystring";
 import {
@@ -21,7 +21,7 @@ const mdxElements = {
 
 const POSTS_PATH = join(process.cwd(), process.env.ARTICLES_PATH);
 
-export function Article({frontMatter, html}) {
+export function Article({frontMatter, html}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="m-6">
       <article className="prose prose-lg">
@@ -34,7 +34,7 @@ export function Article({frontMatter, html}) {
   );
 }
 
-export const getStaticProps: GetStaticProps<ArticleProps> = async ({params}: {params: ArticleProps}) => {
+export const getStaticProps = async ({params}: {params: ArticleProps}) => {
   const articleMarkdownContent = getParsedFileContentBySlug(params.slug, POSTS_PATH);
   const renderHTML = await renderMarkdown(articleMarkdownContent.content);
 
